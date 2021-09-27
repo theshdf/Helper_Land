@@ -1,0 +1,4 @@
+rootProject.name = "Helper"
+include  ':app', ':core', ':uiasr', ':uidialog' ,':videolib',':faceplatform-release'
+include ':versionplugin'
+include ':faceplatform-ui'

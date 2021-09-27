@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13.5dp"
+        android:layout_marginLeft="10dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCover"
+            android:layout_width="143dp"
+            android:layout_height="80dp"
+            android:background="@drawable/ivcover_sp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/bofang"
+        android:layout_centerInParent="true"
+        />
+    <TextView
+        android:id="@+id/tvPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="正在播放"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPlayLogo"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/playingvideo"
+        android:layout_toLeftOf="@+id/tvPlay"
+        android:layout_marginRight="3dp"
+        />
+</RelativeLayout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvOrder"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:background="@mipmap/video_order"
+        android:layout_marginLeft="7.5dp"
+        android:layout_marginTop="10.5dp"
+        android:text="1"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        />
+</FrameLayout>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.tamsiree.RxTool:RxUI:2.6.3@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5e1ff9a3fc4d0923ec97b0ecf606b27d/jetified-RxUI-2.6.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5e1ff9a3fc4d0923ec97b0ecf606b27d/jetified-RxUI-2.6.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5e1ff9a3fc4d0923ec97b0ecf606b27d/jetified-RxUI-2.6.3/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.tamsiree.RxTool/RxUI/2.6.3/3bf9797e58ba9b77d92a4b2abef21afea4e9abcd/RxUI-2.6.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

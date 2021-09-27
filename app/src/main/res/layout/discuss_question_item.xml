@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="22dp"
+    android:background="@color/white"
+    android:paddingBottom="25dp"
+    >
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivUserHead"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:src="@mipmap/ic_launcher"
+        />
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:layout_toRightOf="@+id/ivUserHead"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="6个回答"
+        android:textColor="@color/text_black_333"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvAnsTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvUserName"
+        android:layout_marginLeft="11dp"
+        android:layout_toRightOf="@+id/ivUserHead"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="08.25 09:40"
+        android:textColor="@color/text_gray_999"
+        android:textSize="12sp"
+
+        />
+
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivUserHead"
+        android:layout_marginTop="18dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="6个回答"
+        android:textColor="@color/text_black_333"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvAnsCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvQuestion"
+        android:layout_marginTop="20dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="6个回答  ."
+        android:textColor="@color/text_gray_999"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tvGlanceCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvQuestion"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/tvAnsCount"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="  6个浏览"
+        android:textColor="@color/text_gray_999"
+        android:textSize="13sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAnswer"
+        android:layout_width="100dp"
+        android:layout_height="33dp"
+        android:layout_alignBottom="@id/tvAnsCount"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/answer_sp"
+        android:paddingLeft="15dp"
+        android:paddingTop="8dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="8dp"
+        android:text="我要回答"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        />
+</RelativeLayout>

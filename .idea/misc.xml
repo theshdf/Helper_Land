@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/answer_pic_sp.xml" value="0.19765625" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/answer_sp.xml" value="0.2359375" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/answer_video_sp.xml" value="0.21640625" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/bg_reload_btn.xml" value="0.1" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/bg_round_time_out.xml" value="0.1359375" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/border.xml" value="0.1" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/btn_regin.xml" value="0.1" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/expert_bg_sp.xml" value="0.24296875" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/expert_guide_sp.xml" value="0.13671875" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/expert_video_sp.xml" value="0.1015625" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/expert_video_type_sp.xml" value="0.3140625" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/ic_baseline_message_24.xml" value="0.1" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/ivcover_shade_sp.xml" value="0.1015625" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/mine_sp.xml" value="0.1015625" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/qa_sp.xml" value="0.1015625" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/rember_password.xml" value="0.1" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/search_bg_sp.xml" value="0.24296875" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/shape_btn.xml" value="0.1" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/drawable/top_discuss_bg.xml" value="0.11875" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_answer.xml" value="0.18970588235294117" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_book.xml" value="0.1" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_collect_success.xml" value="0.18203125" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_expertguide.xml" value="0.43333333333333335" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_expertlist.xml" value="0.25129198966408267" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_face_enter.xml" value="0.5230769230769231" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_lesson.xml" value="0.1" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_login.xml" value="0.15" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_parent.xml" value="0.13645833333333332" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_play.xml" value="0.13624338624338625" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_play_rea.xml" value="0.33" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_search.xml" value="0.25" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_solve_method.xml" value="0.28321678321678323" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_test.xml" value="0.18788343558282208" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_webview.xml" value="0.2453416149068323" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/answer_all.xml" value="0.24612403100775193" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/answer_all_xml.xml" value="0.2390625" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/book_item.xml" value="0.23191214470284238" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/class_item.xml" value="0.15859375" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/class_item_mine.xml" value="0.1375" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/common_head.xml" value="0.67" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/common_head_black.xml" value="0.24612403100775193" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/dialog_time_out.xml" value="0.20930232558139536" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/discuss_question_item.xml" value="0.25" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/exper_class_item.xml" value="0.75" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/expert_item.xml" value="0.23983739837398374" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/fragment_answerpic.xml" value="0.1" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/fragment_answervideo.xml" value="0.23046875" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/fragment_answervoice.xml" value="0.2728380024360536" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/fragment_countryside.xml" value="0.1" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/fragment_discuss.xml" value="0.1981279251170047" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/fragment_live.xml" value="0.25078125" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/fragment_mine.xml" value="0.33" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/guide_head_view.xml" value="0.23837209302325582" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/guide_item.xml" value="0.25129198966408267" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/layout_content.xml" value="0.21705426356589147" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/layout_custom_header.xml" value="0.22674418604651161" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/layout_empty.xml" value="0.5" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/layout_error.xml" value="0.21705426356589147" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/layout_loading.xml" value="0.21705426356589147" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/layout_scrolling_toolbar.xml" value="0.1" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/layout_timeout.xml" value="0.21705426356589147" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/layout_toolbar.xml" value="0.22674418604651161" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/live_item.xml" value="0.25078125" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/search_common_head.xml" value="0.67" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/solve_head_view.xml" value="0.25129198966408267" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/solve_item.xml" value="0.1921875" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/solve_video_item.xml" value="0.5050847457627119" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/teacher_item.xml" value="0.25129198966408267" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/app/src/main/res/layout/video_rela_item.xml" value="0.1" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/faceplatform-ui/src/main/res/drawable/collect_image_close_selector.xml" value="0.4078125" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/faceplatform-ui/src/main/res/layout/activity_face_detect_v3100.xml" value="0.20300751879699247" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/faceplatform-ui/src/main/res/layout/activity_face_liveness_v3100.xml" value="0.23712948517940718" />
+        <entry key="..\:/github/github/Helper-main/Helper-main/versionplugin/src/main/res/layout/activity_main.xml" value="0.25129198966408267" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/drawable/home_top_sp.xml" value="0.1109375" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/drawable/ivcover_shade_sp.xml" value="0.11015625" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/drawable/ivcover_sp.xml" value="0.11015625" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/drawable/mine_sp.xml" value="0.1" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/drawable/qa_sp.xml" value="0.11015625" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/drawable/search_bg_sp.xml" value="0.33" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/drawable/search_his_sp.xml" value="0.1109375" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/drawable/search_shape.xml" value="0.13203125" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/drawable/search_shape_gray.xml" value="0.13203125" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/drawable/top_mine_bg.xml" value="0.11015625" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/drawable/top_qa_bg.xml" value="0.1109375" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/drawable/worker_level_sp.xml" value="0.13515625" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/drawable/worker_post_sp.xml" value="0.12421875" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_main.xml" value="0.45865834633385333" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_play.xml" value="0.1" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_play_rea.xml" value="0.1" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/activity_search.xml" value="0.5" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/book_item.xml" value="0.5785714285714286" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/class_item.xml" value="0.5" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/common_head.xml" value="0.1" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/fragment_countryside.xml" value="0.1" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/fragment_live.xml" value="0.1744186046511628" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/fragment_mine.xml" value="0.3448275862068966" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/guide_head_view.xml" value="0.16020671834625322" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/guide_item.xml" value="0.1" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/his_item.xml" value="1.0" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/layout_jzstd_notitle.xml" value="0.1" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/live_item.xml" value="0.1" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/solve_item.xml" value="0.67" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/teacher_item.xml" value="0.1" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/app/src/main/res/layout/video_rela_item.xml" value="0.2938388625592417" />
+        <entry key="..\:/zcm/github/github/Helper-main/Helper-main/videolib/src/main/res/layout/jz_layout_std.xml" value="0.47733333333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="org.greenrobot.eventbus.Subscribe" />
+    </list>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="24dp"
+            android:textSize="19sp"
+            android:text="乡村振兴如何与青年返乡相结合？"
+            android:textColor="@color/text_black_333"
+            android:maxLines="1"
+            android:ellipsize="end"
+            />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/edit_bg_f6"
+            android:hint="填写回答内容"
+            android:gravity="start"
+            android:paddingLeft="25dp"
+            android:paddingTop="27dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上传照片"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="26dp"
+            android:textSize="16sp"
+            />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

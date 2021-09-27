@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F6F6F6"
+    >
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingTop="20dp"
+    >
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivQueset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/question"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/ivQueset"
+        android:text="乡村振兴如何与青年返乡相结合？"
+        android:textColor="@color/text_black_333"
+        android:textSize="17sp" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvQuestionDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="生活垃圾收集与处理有多重属性，是市政公益事业，是环保产业，也是现代服务业。"
+        android:layout_toRightOf="@+id/ivQueset"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/text_black_333"
+        android:layout_below="@+id/tvQuestion"
+        android:layout_marginTop="15dp"
+        />
+    <View
+        android:id="@+id/viewLine1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tvQuestionDes"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="#F0F0F0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDegree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewLine1"
+        android:layout_marginLeft="51dp"
+        android:text="困难点: 暂无"
+        android:textColor="@color/text_black_333"
+        android:textSize="15sp"
+        />
+    <View
+        android:id="@+id/viewline2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tvDegree"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="#F0F0F0"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewline2"
+        android:layout_marginBottom="21dp"
+        android:text="6640浏览 · 2021年06月05日发布"
+        android:layout_marginLeft="51dp"
+        />
+</RelativeLayout>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/tvAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="回答"
+            android:textSize="17sp"
+            android:textColor="@color/textgreen_1aa"
+            android:layout_marginTop="21dp"
+            android:layout_marginLeft="21dp"
+            />
+
+        <TextView
+            android:id="@+id/tvPicAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="图文回答"
+            android:textSize="17sp"
+            android:textColor="@color/text_black_333"
+            android:layout_marginTop="21dp"
+            android:layout_marginLeft="21dp"
+            />
+
+        <TextView
+            android:id="@+id/tvVideoAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="视频回答"
+            android:textSize="17sp"
+            android:textColor="@color/text_black_333"
+            android:layout_marginTop="21dp"
+            android:layout_marginLeft="21dp"
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+   <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpSolve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:visibility="gone"
+        />
+        <FrameLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

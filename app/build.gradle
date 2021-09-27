@@ -1,0 +1,123 @@
+plugins {
+    id 'com.android.application'
+}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    signingConfigs {
+        debug {
+            storeFile file('F:\\github\\github\\Helper-main\\Helper-main\\voicejk.jks')
+            storePassword '123456'
+            keyAlias 'key0'
+            keyPassword '123456'
+        }
+
+        release {
+            storeFile file('F:\\github\\github\\Helper-main\\Helper-main\\voicejk.jks')
+            storePassword '123456'
+            keyAlias 'key0'
+            keyPassword '123456'
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.jyzx.helper"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dependenciesInfo {
+        includeInApk true
+        includeInBundle true
+    }
+    buildToolsVersion '30.0.1'
+    ndkVersion '21.3.6528147'
+    compileSdkVersion 31
+    kapt {
+        arguments {
+            //依赖了RxJava时，rxhttp_rxjava参数为必须，传入RxJava版本号
+            arg("rxhttp_rxjava", "3.1.1")
+            //arg("rxhttp_package", "rxhttp")  //指定RxHttp类包名，非必须
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    implementation 'com.orhanobut:logger:2.2.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'io.reactivex.rxjava3:rxjava:3.1.1'
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation 'com.github.liujingxing.rxlife:rxlife-rxjava3:2.1.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.1'
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.github.liujingxing.rxhttp:rxhttp:2.6.8'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1' //rxhttp v2.2.2版本起，需要手动依赖okhttp
+    kapt 'com.github.liujingxing.rxhttp:rxhttp-compiler:2.6.8'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
+   // debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+    implementation 'com.guolindev.permissionx:permissionx:1.5.0'
+    implementation 'org.greenrobot:eventbus:3.2.0'
+    //bugly
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.6'
+    implementation 'com.tencent:mmkv-static:1.2.10'
+    implementation project(path: ':core')
+    implementation project(':uiasr')
+    implementation project(':uidialog')
+    implementation project(':videolib')
+    implementation 'com.github.hackware1993:MagicIndicator:1.7.0' // for androidx
+    implementation 'com.guolindev.permissionx:permissionx:1.5.0'
+    //基础工具库
+    implementation 'com.github.tamsiree.RxTool:RxKit:2.6.3'
+    //UI库
+    implementation 'com.github.tamsiree.RxTool:RxUI:2.6.3'
+    //相机库
+    implementation 'com.github.tamsiree.RxTool:RxCamera:2.6.3'
+    //功能库（Zxing扫描与生成二维码条形码）
+    implementation 'com.github.tamsiree.RxTool:RxFeature:2.6.3'
+    //ArcGis For Android工具库（API：100.1以上版本）
+    implementation 'com.github.tamsiree.RxTool:RxArcGisKit:2.6.3'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+    implementation 'com.zackratos.ultimatebarx:ultimatebarx:0.6.0'
+    implementation 'com.dylanc:loadinghelper:2.1.0'
+    compile project(path: ':faceplatform-ui')
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+    implementation 'com.orhanobut:logger:2.2.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+    implementation 'com.blankj:utilcodex:1.30.1'
+    implementation 'com.github.CarGuo.GSYVideoPlayer:GSYVideoPlayer:v8.1.6-jitpack'
+}
+
+repositories {
+    mavenCentral()
+    google()
+    jcenter()
+}

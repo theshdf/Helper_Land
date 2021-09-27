@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.CarGuo:GSYIjkJava:1.0.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/71c6ede55065f2a91ed1a6b778321d04/jetified-GSYIjkJava-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/71c6ede55065f2a91ed1a6b778321d04/jetified-GSYIjkJava-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/71c6ede55065f2a91ed1a6b778321d04/jetified-GSYIjkJava-1.0.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.CarGuo/GSYIjkJava/1.0.0/c0dd9395053840197f86528bd951add19c4c12bf/GSYIjkJava-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

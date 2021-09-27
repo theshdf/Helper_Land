@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvsolve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/guide_method"
+        android:textSize="15sp"
+        android:textColor="@color/text_black_333"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查看全部"
+        android:textColor="@color/text_gray_999"
+        android:textSize="10sp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

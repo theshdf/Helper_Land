@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    >
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivUserHead"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/ivUserHead"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:maxLines="1"
+        android:text="name"
+        android:textColor="@color/text_black_333"
+        android:textSize="18sp"
+        android:padding="0dp"/>
+
+    <TextView
+        android:id="@+id/tvRank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvUserName"
+        android:layout_toRightOf="@+id/ivUserHead"
+        android:layout_marginTop="15dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/text_gray_999"
+        android:textSize="14sp"
+        android:text="pro"
+        android:layout_marginLeft="20dp"
+        />
+
+    <TextView
+        android:id="@+id/tvDeputy"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/tvRank"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/ivUserHead"
+        android:background="@drawable/qa_sp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:text="pro"
+        android:textColor="@color/text_gray_999"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvIntro"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_below="@id/tvDeputy"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:layout_toRightOf="@+id/ivUserHead"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="pro"
+        android:textColor="@color/text_gray_999"
+        android:textSize="12sp" />
+</RelativeLayout>

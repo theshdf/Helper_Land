@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Helper.iml" filepath="$PROJECT_DIR$/.idea/modules/Helper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Helper.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Helper.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/Helper.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/Helper.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/faceplatform-release/Helper.faceplatform-release.iml" filepath="$PROJECT_DIR$/.idea/modules/faceplatform-release/Helper.faceplatform-release.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/faceplatform-ui/Helper.faceplatform-ui.iml" filepath="$PROJECT_DIR$/.idea/modules/faceplatform-ui/Helper.faceplatform-ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/uiasr/Helper.uiasr.iml" filepath="$PROJECT_DIR$/.idea/modules/uiasr/Helper.uiasr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/uidialog/Helper.uidialog.iml" filepath="$PROJECT_DIR$/.idea/modules/uidialog/Helper.uidialog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/versionplugin/Helper.versionplugin.iml" filepath="$PROJECT_DIR$/.idea/modules/versionplugin/Helper.versionplugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/videolib/Helper.videolib.iml" filepath="$PROJECT_DIR$/.idea/modules/videolib/Helper.videolib.iml" />
+    </modules>
+  </component>
+</project>

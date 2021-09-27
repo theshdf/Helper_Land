@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F7"
+    android:overScrollMode="never"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@mipmap/mine_bg">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivHeadIcon"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginLeft="20dp"
+                android:src="@mipmap/head" />
+
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@+id/ivHeadIcon"
+                android:text="王国强"
+                android:textSize="19sp" />
+
+            <TextView
+                android:id="@+id/tvUserLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvUserName"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/ivHeadIcon"
+                android:background="@drawable/worker_level_sp"
+                android:paddingLeft="7dp"
+                android:paddingTop="3dp"
+                android:paddingRight="7dp"
+                android:paddingBottom="3dp"
+                android:text="资深专家"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tvUserPost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvUserName"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/tvUserLevel"
+                android:background="@drawable/worker_post_sp"
+                android:paddingLeft="7dp"
+                android:paddingTop="3dp"
+                android:paddingRight="7dp"
+                android:paddingBottom="3dp"
+                android:text="浙大教师"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llcontent"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/mine_sp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvMineQues"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:text="我的提问"
+                    android:textColor="@color/text_black_333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvMineQuesCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/tvMineQues"
+                    android:text="12"
+                    android:textColor="@color/text_black_333"
+                    android:textSize="24sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="27dp"
+                    android:background="@color/line_gray_666" />
+
+                <TextView
+                    android:id="@+id/tvMineAns"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:text="还未答疑"
+                    android:textColor="@color/text_gray_666"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tvMineAnsCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/tvMineAns"
+                    android:text="3"
+                    android:textColor="@color/text_red_ea3"
+                    android:textSize="20sp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvMineRep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:text="收到回复"
+                    android:textColor="@color/text_gray_666"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tvMineRepCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/tvMineRep"
+                    android:text="31"
+                    android:textColor="@color/text_green_05c"
+                    android:textSize="20sp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llContent2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llcontent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="350dp"
+                android:layout_weight="1"
+                android:background="@drawable/mine_sp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_class"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tvClass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="我的课程"
+                        android:textColor="@color/text_black_333"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="22dp"
+                        android:layout_toRightOf="@+id/tvClass"
+                        android:src="@mipmap/mine_enter" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="95dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="24dp"
+                        android:src="@mipmap/mine_comment"
+                        android:visibility="gone"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvClassExp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvClass"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="16dp"
+                        android:text="共有3门课程"
+                        android:textColor="@color/text_gray_999"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvClass"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/dagnhis1" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5dp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/dagnhis2" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5dp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/dagnhis3" />
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#F7F7F7" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tvBook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="我的图书"
+                        android:textColor="@color/text_black_333"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="22dp"
+                        android:layout_toRightOf="@+id/tvBook"
+                        android:src="@mipmap/mine_enter" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="95dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="24dp"
+                        android:src="@mipmap/mien_answer"
+                        android:visibility="gone"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvBookExp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvBook"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="16dp"
+                        android:text="共有2门图书"
+                        android:textColor="@color/text_gray_999"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvBook"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="30dp"
+                            android:layout_height="45dp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/yasqyyajsyj" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="30dp"
+                            android:layout_height="45dp"
+                            android:layout_marginLeft="5dp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/jgsjs" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#F7F7F7" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_answer"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tvExpert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="我的专家"
+                        android:textColor="@color/text_black_333"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="22dp"
+                        android:layout_toRightOf="@+id/tvExpert"
+                        android:src="@mipmap/mine_enter" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="95dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="24dp"
+                        android:src="@mipmap/mine_order"
+                        android:visibility="gone"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvExpertExp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvExpert"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="16dp"
+                        android:text="共有4个专家"
+                        android:textColor="@color/text_gray_999"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvExpert"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/azh_head" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5dp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/yyh_head" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="我的预约"
+                        android:textColor="@color/text_black_333"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="8dp"
+                        android:layout_height="14dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginRight="24dp"
+                        android:src="@mipmap/arrow" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="联系客服"
+                        android:textColor="@color/text_black_333"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="8dp"
+                        android:layout_height="14dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginRight="24dp"
+                        android:src="@mipmap/arrow" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_systen"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="系统升级"
+                        android:textColor="@color/text_black_333"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="8dp"
+                        android:layout_height="14dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginRight="24dp"
+                        android:src="@mipmap/arrow" />
+                </RelativeLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="250dp"
+                android:layout_height="350dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/mine_sp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/rl_study"
+                    android:layout_width="264dp"
+                    android:layout_height="264dp"
+                    android:background="@mipmap/zndx_1"
+                    android:orientation="vertical">
+
+                    <View
+                        android:id="@+id/view1"
+                        android:layout_width="10dp"
+                        android:layout_height="5dp"
+                        android:layout_marginLeft="17dp"
+                        android:layout_marginTop="36dp"
+                        android:background="#05C08C"
+                        android:visibility="gone" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvability"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@+id/view1"
+                        android:text="您的能力指数"
+                        android:textColor="#05C08C"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="10dp"
+                        android:layout_height="5dp"
+                        android:layout_marginLeft="17dp"
+                        android:layout_marginTop="36dp"
+                        android:layout_toRightOf="@+id/tvability"
+                        android:background="#FE7E4F"
+                        android:visibility="gone" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@+id/view2"
+                        android:text="学员平均指数"
+                        android:textColor="#FE7E4F"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivStudy"
+                        android:layout_width="123dp"
+                        android:layout_height="123dp"
+                        android:layout_centerInParent="true"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/zndx_guide"
+                        android:visibility="gone" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/ivStudy"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@+id/view2"
+                        android:text="信念"
+                        android:textColor="@color/text_black_333"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+
+                </RelativeLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

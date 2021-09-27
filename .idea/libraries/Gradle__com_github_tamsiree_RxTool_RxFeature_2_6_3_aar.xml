@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.tamsiree.RxTool:RxFeature:2.6.3@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/88a8b98c93ab78328efccb665e69e985/jetified-RxFeature-2.6.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/88a8b98c93ab78328efccb665e69e985/jetified-RxFeature-2.6.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/88a8b98c93ab78328efccb665e69e985/jetified-RxFeature-2.6.3/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.tamsiree.RxTool/RxFeature/2.6.3/22455413109df18977979e0ad930ef2d465f68f7/RxFeature-2.6.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

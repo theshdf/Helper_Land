@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvsolve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/solve_method"
+        android:textSize="15sp"
+        android:textColor="@color/text_black_333"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查看15个问题"
+        android:textColor="@color/text_gray_999"
+        android:textSize="10sp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tvsolve"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/qa_sp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivQueset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/question" />
+
+        <TextView
+            android:id="@+id/tvQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/ivQueset"
+            android:text=""
+            android:textColor="@color/text_black_333"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+package com.jyzx.helper.bean
+
+/**
+ * 用户名: zcm
+ * date: 2021/9/13
+ * des:
+ **/
+data class TeacherListBean(val teacherResourceList: ArrayList<TeacherBean>,val totalCount: Int)

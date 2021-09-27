@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.MainActivity">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_top_sp"
+        android:paddingTop="10dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivTopLogo"
+            android:layout_width="99dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/home_top" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etSearch"
+            android:layout_width="210dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="9dp"
+            android:layout_toRightOf="@+id/ivTopLogo"
+            android:background="@drawable/search_shape"
+            android:drawableRight="@mipmap/voice"
+            android:ellipsize="end"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="left|center"
+            android:hint="提问"
+            android:maxLines="1"
+            android:paddingLeft="14dp"
+            android:paddingRight="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="13sp" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+
+            >
+            <RadioGroup
+                android:id="@+id/btnGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                >
+
+                <RadioButton
+                    android:id="@+id/btnHome"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/top_home_bg"
+                    android:drawablePadding="4.5dp"
+                    android:text="首页"
+                    android:textColor="@color/button_bg"
+                    android:textSize="14dp" />
+
+                <RadioButton
+                    android:id="@+id/btnLive"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawablePadding="4.5dp"
+                    android:drawableLeft="@drawable/top_live_bg"
+                    android:text="直播"
+                    android:textColor="@color/button_bg"
+                    android:textSize="14dp"
+                    android:layout_gravity="center"
+                    />
+
+                <RadioButton
+                    android:id="@+id/btnQa"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="问答"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/top_qa_bg"
+                    android:textColor="@color/button_bg"
+                    android:textSize="14dp"
+                    android:drawablePadding="4.5dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    />
+                <RadioButton
+                    android:id="@+id/btnDiscuss"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="研讨"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/top_discuss_bg"
+                    android:textColor="@color/button_bg"
+                    android:textSize="14dp"
+                    android:drawablePadding="4.5dp"
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    />
+                <RadioButton
+                    android:id="@+id/btnMine"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="我的"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/top_mine_bg"
+                    android:textColor="@color/button_bg"
+                    android:textSize="14dp"
+                    android:drawablePadding="4.5dp"
+                    android:layout_gravity="center"
+                    />
+            </RadioGroup>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </RelativeLayout>
+    <FrameLayout
+            android:id="@+id/homeContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</FrameLayout>

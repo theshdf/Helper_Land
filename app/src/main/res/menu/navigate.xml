@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@mipmap/ic_launcher"
+
+        android:title="首页"
+        />
+    <item
+        android:id="@+id/live"
+        android:icon="@mipmap/ic_launcher"
+        android:title="直播"
+        />
+    <item
+        android:id="@+id/qa"
+        android:icon="@mipmap/ic_launcher"
+        android:title="问答"
+        />
+    <item
+        android:id="@+id/discuss"
+        android:icon="@mipmap/ic_launcher"
+        android:title="研讨"
+        />
+    <item
+        android:id="@+id/mine"
+        android:icon="@mipmap/ic_launcher"
+        android:title="我的"
+        />
+
+</menu>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/search_bg_sp"
+    android:id="@+id/content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@drawable/home_top_sp">
+
+        <RelativeLayout
+            android:id="@+id/rlBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="10dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="15dp"
+                android:background="@mipmap/fanhui_white"
+                android:paddingTop="15dp" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etSearch"
+            android:layout_width="315dp"
+            android:layout_height="36dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/search_shape"
+            android:drawableRight="@mipmap/voice"
+            android:ellipsize="end"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="left|center"
+            android:hint="提问"
+            android:maxLines="1"
+            android:paddingLeft="17dp"
+            android:paddingRight="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/searchRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/search_bg_sp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rlSearchHis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="21dp"
+                        android:text="搜索历史"
+                        android:textColor="@color/text_black_333"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivClean"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="18dp"
+                        android:src="@mipmap/lajitong" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvSearchHis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ivClean"
+                        android:layout_marginLeft="21dp"
+                        android:scrollbars="none" />
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="31dp"
+                    android:text="相关课程"
+                    android:textColor="@color/text_black_333"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvRelaClass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="31dp"
+                    android:text="相关师资"
+                    android:textColor="@color/text_black_333"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvRelaTeacher"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="31dp"
+                    android:text="相关图书"
+                    android:textColor="@color/text_black_333"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvRelaBook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
