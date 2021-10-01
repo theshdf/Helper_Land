@@ -36,7 +36,7 @@
     <application
         android:allowBackup="true"
         android:name=".HelperApplication"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/applogo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -91,6 +91,8 @@
         <activity android:name=".ui.activity.BookActivity"/>
         <activity android:name=".ui.activity.AnswerActivity"/>
         <activity android:name=".ui.activity.SolveMethodActivtiy"/>
+        <activity android:name=".ui.activity.SearchFakeActivity"/>
+        <activity android:name=".ui.activity.ExpertGuideFakeActivity"/>
         <!--  人脸识别 -->
         <activity android:name="com.jyzx.helper.ui.activity.face.FaceEnterActivity"
             android:screenOrientation="landscape"

@@ -1,6 +1,7 @@
 package com.jyzx.helper.ui.adapter
 
 import android.content.Context
+import android.text.TextUtils
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
@@ -23,6 +24,14 @@ class BookAdapter(resId: Int, data: ArrayList<BookBean>, context: Context?) : Ba
         val option = RequestOptions().error(R.mipmap.ic_launcher)
             .placeholder(R.mipmap.ic_launcher)
             .transform(RoundedCorners(6))
-        Glide.with(context).load(item.img).apply(option).into(ivCover)
+        if(item.bookPic != R.mipmap.ic_launcher){
+            Glide.with(context).load(item.bookPic).apply(option).into(ivCover)
+        }
+        else{
+            if(TextUtils.isEmpty(item.img)){
+                Glide.with(context).load(item.img).apply(option).into(ivCover)
+            }
+        }
+
     }
 }

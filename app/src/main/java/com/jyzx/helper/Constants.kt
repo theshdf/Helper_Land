@@ -12,7 +12,7 @@ open class Constants {
         // val HOME_TITLE = listOf("乡村振兴","生态文明","法制建设","经济建设","社会党建","数字建设")
         val HOME_TITLE = listOf(
             "党史学习", "乡村振兴", "基层治理", "数字变革",
-            "生态文明", "法制建设","经济建设","党建引领")
+            "生态文明", "法制建设","经济建设","党建引领","杨家岭","井冈山","抗大","南泥湾","七大","十四五")
         val voiceMap = mapOf<Int, String>(0 to "依法治国", 1 to "案例", 2 to "可以的")
         val voiceAnswer = mutableMapOf(
             "依法治国" to "好的，您是想要了解关于法治乡村建设的相关内容吗？",

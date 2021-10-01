@@ -35,12 +35,12 @@ class VideoRelaAdapter(val res:Int, val datas: ArrayList<VideoBean>, context: Co
         Glide.with(context).load(item.videoCover).apply(option).into(ivCover)
         if(item.isPlay){
             ivPlay.visibility = View.GONE
-            tvPlay.visibility = View.VISIBLE
-            ivPlayLogo.visibility = View.VISIBLE
+            tvPlay.visibility = View.GONE
+            ivPlayLogo.visibility = View.GONE
         }
         else{
             tvPlay.visibility = View.GONE
-            ivPlay.visibility = View.VISIBLE
+            ivPlay.visibility = View.GONE
             ivPlayLogo.visibility = View.GONE
         }
     }

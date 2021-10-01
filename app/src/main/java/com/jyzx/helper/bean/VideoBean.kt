@@ -24,5 +24,7 @@ data class VideoBean (
     var leadCover: Int = R.mipmap.zxh_cover,
     var isPlay: Boolean = false,
     var videoTime: String = "10",
-    var videoType: String = Constants.HOME_TITLE[0]
-): Serializable
+    var videoType: String = Constants.HOME_TITLE[0],
+    var startPosition: Long = 0
+): Serializable{
+}

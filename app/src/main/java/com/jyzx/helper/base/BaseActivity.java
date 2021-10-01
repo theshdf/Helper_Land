@@ -14,10 +14,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import com.dylanc.loadinghelper.LoadingHelper;
+import com.jyzx.helper.HelperApplication;
 import com.jyzx.helper.R;
+import com.jyzx.helper.event.CommonEvent;
 import com.jyzx.helper.ui.activity.MainActivity;
 import com.jyzx.helper.utils.ActivityControlUtil;
+import com.jyzx.helper.utils.StringUtils;
 import com.tamsiree.rxkit.view.RxToast;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.util.ArrayList;
 
 /**
  * activity基类
@@ -65,12 +74,15 @@ public abstract  class BaseActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         //Eventbus 可封装在这
+        if (!EventBus.getDefault().isRegistered(this))
+            EventBus.getDefault().register(this);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-
+        if (EventBus.getDefault().isRegistered(this))
+            EventBus.getDefault().unregister(this);
     }
 
     @Override
@@ -149,5 +161,39 @@ public abstract  class BaseActivity extends AppCompatActivity {
             tvVoiceContent.setVisibility(View.GONE);
             tvVoiceContent.setText("");
         }
+    }
+
+    /**
+     * 搜索之前从本地搜索关键字
+     * @param word
+     */
+    protected String handleSearchWord(String word){
+        word = StringUtils.Companion.getAllWord(word);
+        ArrayList<String> orderWords  = HelperApplication.orderKeyword;
+        ArrayList<String> keyword = HelperApplication.keyWord;
+        String hasWord = "";
+        if(orderWords!=null&&orderWords.size()>0){
+            //
+            for (int i = 0; i < orderWords.size(); i++) {
+                if(orderWords.get(i).equals(word)){
+                    hasWord = word;
+                }
+            }
+            if(!TextUtils.isEmpty(hasWord)){
+               if(keyword!=null&& keyword.size()>0){
+                   for (int i = 0; i < keyword.size(); i++) {
+                       if(hasWord.contains(keyword.get(i))){
+                           return keyword.get(i);
+                       }
+                   }
+               }
+            }
+        }
+        return null;
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void handleVoice(CommonEvent event) {
+
     }
 }

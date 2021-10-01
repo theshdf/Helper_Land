@@ -26,10 +26,12 @@ EXP: 视频播放页面
  */
 
 class PlayActivity : BaseActivity() {
+
     private lateinit var videoUrl: String
     private lateinit var videoTitle :String
     private lateinit var map: LinkedHashMap<String,String>
     private lateinit var videoBean: VideoBean
+
     override fun beforeView() {
         StatusUtils.updateHomeStatus(this)
     }
@@ -45,6 +47,7 @@ class PlayActivity : BaseActivity() {
     }
 
     override fun initView(saveInstanceState: Bundle?) {
+
     }
 
     override fun initListener() {
@@ -54,9 +57,8 @@ class PlayActivity : BaseActivity() {
     }
 
     override fun initData() {
-        PlayerFactory.setPlayManager(Exo2PlayerManager::class.java)
         videoPlayer.setUp(videoUrl,true,videoTitle)
-       // videoPlayer.seekOnStart = 50000
+        seekToPosition(0)
         videoPlayer.startPlayLogic()
     }
 
@@ -104,6 +106,42 @@ class PlayActivity : BaseActivity() {
     override fun onDestroy() {
         super.onDestroy()
         GSYVideoManager.releaseAllVideos()
-      //  if (orientationUtils != null) orientationUtils.releaseListener()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        videoPlayer.onVideoPause()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        videoPlayer.onVideoResume()
+    }
+
+    /**
+     * 制定位置播放视频
+     */
+    private fun seekToPosition(position: Int){
+        if(position != 0){
+            videoPlayer.seekOnStart = position as Long
+        }
+    }
+
+    /**
+     * 暂停视频的播放
+     */
+     fun pauseVideo(){
+        if(videoPlayer!= null){
+            videoPlayer.onVideoPause()
+        }
+    }
+
+    /**
+     * 播放视频
+     */
+    fun playVideo(){
+        if(videoPlayer!= null){
+            videoPlayer.onVideoResume()
+        }
     }
 }

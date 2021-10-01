@@ -11,6 +11,7 @@ import com.baidu.idl.face.platform.LivenessTypeEnum
 import com.baidu.idl.face.platform.listener.IInitCallback
 import com.dylanc.loadinghelper.LoadingHelper
 import com.dylanc.loadinghelper.ViewType
+import com.jyzx.helper.bean.UserInfo
 import com.jyzx.helper.http.RxHttpManager
 import com.jyzx.helper.ui.activity.face.QualityConfigManager
 import com.jyzx.helper.ui.adapter.loading.EmptyAdapter
@@ -28,9 +29,11 @@ import com.scwang.smartrefresh.layout.api.RefreshFooter
 import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter
 import com.scwang.smartrefresh.layout.header.ClassicsHeader
+import com.shuyu.gsyvideoplayer.player.PlayerFactory
 import com.tamsiree.rxkit.RxTool
 import com.tamsiree.rxkit.view.RxToast.showToast
 import com.tencent.mmkv.MMKV
+import tv.danmaku.ijk.media.exo2.Exo2PlayerManager
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -46,9 +49,13 @@ class HelperApplication : Application() {
 
 
     companion object{
+        var isLogin = false
+        lateinit var currentUser: UserInfo
         lateinit var instance: HelperApplication
         var start: Int = 0
         lateinit var keyWord: ArrayList<String>
+        //初始化关键字
+        lateinit var orderKeyword: ArrayList<String>
 
         // 动作活体条目集合
         var livenessList: List<LivenessTypeEnum> = ArrayList()
@@ -117,6 +124,7 @@ class HelperApplication : Application() {
         //初始化网络请求
         RxHttpManager.init(this)
         MMKV.initialize(this)
+        PlayerFactory.setPlayManager(Exo2PlayerManager::class.java)
         //日志打印
         var format = PrettyFormatStrategy.newBuilder()
             .showThreadInfo(false)

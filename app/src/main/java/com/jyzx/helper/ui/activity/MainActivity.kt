@@ -18,8 +18,10 @@ import androidx.fragment.app.FragmentTransaction
 import cc.taylorzhang.singleclick.onSingleClick
 import cn.jzvd.JzvdStd
 import com.jyzx.helper.Constants
+import com.jyzx.helper.HelperApplication
 import com.jyzx.helper.R
 import com.jyzx.helper.base.BaseActivity
+import com.jyzx.helper.bean.VideoBean
 import com.jyzx.helper.event.CommonEvent
 import com.jyzx.helper.event.PlayEvent
 import com.jyzx.helper.event.VoiceResult
@@ -28,11 +30,9 @@ import com.jyzx.helper.services.VoiceService
 import com.jyzx.helper.services.WakeService
 import com.jyzx.helper.ui.activity.face.FaceEnterActivity
 import com.jyzx.helper.ui.fragment.*
-import com.jyzx.helper.utils.MediaPlay
+import com.jyzx.helper.utils.*
 import com.jyzx.helper.utils.MediaPlay.Companion.playMedia
-import com.jyzx.helper.utils.SpeechUtils
 import com.jyzx.helper.utils.StatusUtils
-import com.jyzx.helper.utils.StringUtils
 import com.jyzx.helper.view.MyJzvdStdNoTitleNoClarity
 import com.orhanobut.logger.Logger
 import com.permissionx.guolindev.PermissionX
@@ -170,8 +170,6 @@ class MainActivity : BaseActivity() {
 
     override fun onResume() {
         super.onResume()
-        if (!EventBus.getDefault().isRegistered(this))
-            EventBus.getDefault().register(this)
     }
 
     override fun onStop() {
@@ -180,8 +178,6 @@ class MainActivity : BaseActivity() {
         tvVoiceContent.visibility = View.GONE
         rlContent.visibility = View.GONE
         tvVoiceContent.text = ""
-        if (EventBus.getDefault().isRegistered(this))
-            EventBus.getDefault().unregister(this)
     }
 
     override fun onDestroy() {
@@ -296,12 +292,9 @@ class MainActivity : BaseActivity() {
             Logger.d(Constants.TAG,restultStr)
             Handler().postDelayed({
                 //拿到最终结果
-                hideVoiceTip()
                 etSearch.setText(restultStr)
-                var intent = Intent(this@MainActivity, SearchActivity::class.java)
-                intent.putExtra("result", restultStr)
-                startActivity(intent)
-            }, 1000)
+                handleKey(restultStr)
+            }, 0)
         } else {
             Logger.d(Constants.TAG, "inn$restultStr")
         }
@@ -311,10 +304,12 @@ class MainActivity : BaseActivity() {
      * 控制语音的开始和关闭的ui
      */
     @Subscribe(threadMode = ThreadMode.MAIN)
-    fun handleVoice(event: CommonEvent) {
+    override fun handleVoice(event: CommonEvent) {
         when (event.type) {
             "onAsrExit" -> {
-             //  hideVoiceTip()
+                Handler().postDelayed({
+                    hideVoiceTip()
+                },1000)
                 Logger.d(Constants.TAG,"onAsrExit")
             }
             "onAsrReady" -> {
@@ -341,5 +336,100 @@ class MainActivity : BaseActivity() {
 
     private fun unregister(){
         unregisterReceiver(netBroadcastReceive)
+    }
+
+    /**
+     * 对语音搜索结果进行处理
+     */
+    private fun handleKey(result:String){
+        //该关键字可能是课程 可能是老师  可能都不是
+            when {
+                result.contains("个人中心")->{
+                    btnGroup.check(R.id.btnMine)
+                    var beginTran = fragmentManager.beginTransaction()
+                    beginTran.hide(homeFragment)
+                        .hide(liveFragment)
+                        .hide(qaFragment)
+                        .hide(discussFragment)
+                    if (!discussFragment.isAdded) {
+                        beginTran.add(R.id.homeContent, mineFragment).commit()
+                    } else {
+                        beginTran.show(mineFragment).commit()
+                    }
+                }
+                result.contains("回到首页")->{
+                    btnGroup.check(R.id.btnHome)
+                    var beginTran = fragmentManager.beginTransaction()
+                    beginTran.hide(liveFragment)
+                        .hide(qaFragment)
+                        .hide(discussFragment)
+                        .hide(mineFragment)
+                    if (!homeFragment.isAdded) {
+                        beginTran.add(R.id.homeContent, homeFragment).commit()
+                    } else {
+                        beginTran.show(homeFragment).commit()
+                    }
+                }
+                result.contains("我的课程")->{
+                    if(btnGroup.checkedRadioButtonId == R.id.btnMine){
+                        mineFragment.openClass()
+                    }
+                }
+                result.contains("我的图书")->{
+                    if(btnGroup.checkedRadioButtonId == R.id.btnMine){
+                        mineFragment.openBook()
+                    }
+                }
+                result.contains("我的专家")->{
+                    if(btnGroup.checkedRadioButtonId == R.id.btnMine){
+                        mineFragment.openTeacher()
+                    }
+                }
+                result.contains("登录")->{
+                    startActivity(Intent(this, LoginActivity::class.java))
+                }
+                result.contains("王小广") -> {
+                    var bean = VideoBean(
+                        "2021-8-1",
+                        100,
+                        100,
+                        "http://jykt.jy365.net/lessionnew/mp4/GC03I0417055_1706.mp4",
+                        "王小广",
+                        "房地产健康发展的长效机制建设（上）",
+                        "国家行政学院决策咨询部副主任、研究员",
+                        R.mipmap.wxg_head,
+                        R.mipmap.eco3,
+                        R.mipmap.wxg_head,
+                        videoTime = "45",
+                        videoType = Constants.HOME_TITLE[6]
+                    )
+                    var intent = Intent(this,ExpertGuideFakeActivity::class.java)
+                    intent.putExtra("expertObj",bean)
+                    startActivity(intent)
+                }
+                result.contains("李军鹏") or  result.contains("李君鹏") -> {
+                    var bean = VideoBean(
+                        "2021-8-1",
+                        100,
+                        100,
+                        "http://jykt.jy365.net/lessionnew/mp4/GC13I2918055_1806.mp4",
+                        "李军鹏",
+                        "大力实施乡村振兴战略，壮大乡村发展新动能",
+                        "国家行政学院教授、博士生导师",
+                        R.mipmap.ljp_head,
+                        R.mipmap.country2,
+                        R.mipmap.ljp_head,
+                        videoType = Constants.HOME_TITLE[1]
+                    )
+                    var intent = Intent(this,ExpertGuideFakeActivity::class.java)
+                    intent.putExtra("expertObj",bean)
+                    startActivity(intent)
+                }
+                else -> {
+                    var intent = Intent(this@MainActivity, PlayWithRelaActivity::class.java)
+                    intent.putExtra("result", StringUtils.getAllWord(result))
+                    startActivity(intent)
+                }
+        }
     }
 }

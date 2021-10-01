@@ -9,44 +9,48 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.jyzx.helper.view.MyFullPlay
-            android:id="@+id/jzRela"
+        <com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer
+            android:id="@+id/relVideoPlayer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <include layout="@layout/common_head"
-            />
-
-        <RelativeLayout
-            android:id="@+id/rlVideoList"
-            android:layout_width="169dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="right"
-            android:background="#33000000"
-            >
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvVideo"
-                android:layout_width="142dp"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:scrollbars="none" />
-            <ImageButton
-                android:id="@+id/ivHideVideoList"
+            android:layout_height="match_parent" >
+        </com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer>
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher"
-                android:layout_gravity="center_vertical"
-                android:layout_centerVertical="true"
-                android:visibility="gone"
-                />
-        </RelativeLayout>
-        <ImageButton
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="right"
+                >
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivHideVideoList"
+                    android:layout_width="28dp"
+                    android:layout_height="56dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/videocontrol"
+                    android:visibility="gone" />
+            <RelativeLayout
+                android:id="@+id/rlVideoList"
+                android:layout_width="169dp"
+                android:layout_height="match_parent"
+                android:background="#33000000">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvVideo"
+                    android:layout_width="142dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:scrollbars="none" />
+            </RelativeLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivShowVideoList"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher"
+            android:layout_width="28dp"
+            android:layout_height="56dp"
+            android:src="@mipmap/videocontrol"
             android:layout_gravity="center_vertical|right"
             android:visibility="gone"
+            android:scaleType="fitXY"
             />
     </FrameLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,5 +1,6 @@
 package com.jyzx.helper.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
@@ -64,7 +65,7 @@ class LessonActivity : BaseActivity() {
     }
 
     override fun initListener() {
-        lessonAdapter.setOnItemClickListener { _, view, _ ->
+        lessonAdapter.setOnItemClickListener { _, view, position->
             view?.determineTriggerSingleClick{
            /*     MyJzvdStdNoTitleNoClarity.startFullscreenDirectly(
                     this,
@@ -72,6 +73,23 @@ class LessonActivity : BaseActivity() {
                     lessonDatas[position].videoUrl,
                     lessonDatas[position].title
                 )*/
+                var bean = VideoBean(
+                    "2021-8-1",
+                    100,
+                    100,
+                    lessonDatas[position].courseUrl,
+                    "肖邮华",
+                    lessonDatas[position].name,
+                    "井冈山革命博物馆原馆长",
+                    R.mipmap.lyj_head,
+                    R.mipmap.jinggangshan6,
+                    R.mipmap.lyj_head,
+                    videoTime = "19",
+                    videoType = Constants.HOME_TITLE[9]
+                )
+                var intent = Intent(this,PlayActivity::class.java)
+                intent.putExtra(Constants.VIDEOBEAN,bean)
+                startActivity(intent)
             }
         }
         srlLesson.setOnRefreshLoadMoreListener(object : OnRefreshLoadMoreListener{

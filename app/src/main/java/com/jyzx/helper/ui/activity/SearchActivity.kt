@@ -78,7 +78,7 @@ class SearchActivity : BaseActivity() {
     }
 
     override fun initView(saveInstanceState: Bundle?) {
-        searchRefresh.setColorSchemeColors(Color.parseColor("#1AA77A"))
+        //searchRefresh.setColorSchemeColors(Color.parseColor("#1AA77A"))
         //loadingHelper = LoadingHelper(content)
         classData = ArrayList()
         teacherData = ArrayList()
@@ -144,7 +144,7 @@ class SearchActivity : BaseActivity() {
                 /*  var intent = intent
                   intent.setClass(this, PlayWithRelaActivity::class.java)
                   startActivity(intent)*/
-                var intent = Intent(this, ExpertGuideActivity::class.java)
+                var intent = Intent(this, ExpertGuideFakeActivity::class.java)
                 intent.putExtra("id", teacherData[position].id)
                 startActivity(intent)
             }
@@ -160,9 +160,9 @@ class SearchActivity : BaseActivity() {
                 )
             }
         }
-        searchRefresh.setOnRefreshListener {
+     /*   searchRefresh.setOnRefreshListener {
             getSearchList(searchResult)
-        }
+        }*/
     }
 
     override fun initData() {
@@ -207,7 +207,7 @@ class SearchActivity : BaseActivity() {
      * 控制语音的开始和关闭的ui
      */
     @Subscribe(threadMode = ThreadMode.MAIN)
-    fun handleVoice(event: CommonEvent) {
+    override fun handleVoice(event: CommonEvent) {
         when (event.type) {
             "onAsrExit" -> {
                 Handler().postDelayed({
@@ -240,9 +240,9 @@ class SearchActivity : BaseActivity() {
                  //请求数据成功
                  refresh(it)
                  //取消刷新
-                 searchRefresh.isRefreshing = false
+                 //searchRefresh.isRefreshing = false
              }.onFailure {
-                 searchRefresh.isRefreshing = false
+               //  searchRefresh.isRefreshing = false
                  loadingHelper.showErrorView()
              }
      }

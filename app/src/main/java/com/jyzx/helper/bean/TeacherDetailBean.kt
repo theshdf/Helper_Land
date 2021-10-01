@@ -1,5 +1,7 @@
 package com.jyzx.helper.bean
 
+import java.io.Serializable
+
 /**
  * 用户名: zcm
  * date: 2021/9/10
@@ -12,11 +14,11 @@ data class TeacherDetailBean(
 
 data class Course(
     val clickCount: Int,
-    val courseName: String,
+    val name: String,
     val thumbnail: String,
     val courseUrl: String,
-    val creator: String
-)
+    val createrid: String
+):Serializable
 
 data class TeacherVo(
     val clickCount: Int,

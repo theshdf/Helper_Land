@@ -7,5 +7,6 @@ package com.jyzx.helper.bean
  **/
 data class HomeTitleAndKeyWord(
     val firstList: ArrayList<String>,
-    val keyword: ArrayList<String>
+    val keyword: ArrayList<String>,
+    val orderKeyword: ArrayList<String>
 )

@@ -16,7 +16,7 @@ import com.jyzx.helper.Constants
 import com.jyzx.helper.R
 import com.jyzx.helper.base.BaseFragment
 import com.jyzx.helper.bean.VideoBean
-import com.jyzx.helper.ui.activity.ExpertGuideActivity
+import com.jyzx.helper.ui.activity.ExpertGuideFakeActivity
 import com.jyzx.helper.ui.activity.PlayActivity
 import com.jyzx.helper.ui.adapter.GuideAdapter
 import com.jyzx.helper.ui.adapter.SolveAdapter
@@ -81,7 +81,7 @@ class EcoCultureFragment : BaseFragment() {
         }
         guideAdapter?.setOnItemClickListener { adapter, view, position ->
             view?.determineTriggerSingleClick {
-                var intent = Intent(activity, ExpertGuideActivity::class.java)
+                var intent = Intent(activity, ExpertGuideFakeActivity::class.java)
                 intent.putExtra("expertObj",guideDatas[position])
                 startActivity(intent)
             }

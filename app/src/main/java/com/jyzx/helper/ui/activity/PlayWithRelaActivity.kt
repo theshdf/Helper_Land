@@ -4,6 +4,8 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.os.Handler
+import android.view.MotionEvent
 import android.view.View
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,6 +23,11 @@ import com.jyzx.helper.base.JZMediaSystemAssertFolder
 import com.jyzx.helper.bean.VideoBean
 import com.jyzx.helper.ui.adapter.VideoRelaAdapter
 import com.jyzx.helper.utils.FakeDataUtil
+import com.shuyu.gsyvideoplayer.GSYVideoManager
+import com.shuyu.gsyvideoplayer.listener.GSYSampleCallBack
+import com.shuyu.gsyvideoplayer.listener.GSYVideoProgressListener
+import com.shuyu.gsyvideoplayer.listener.VideoAllCallBack
+import kotlinx.android.synthetic.main.activity_play.*
 import kotlinx.android.synthetic.main.activity_play_rea.*
 import kotlinx.android.synthetic.main.common_head.*
 import retrofit2.http.Url
@@ -32,13 +39,10 @@ EXP: 播放相关视频页面
  */
 
 class PlayWithRelaActivity : BaseActivity() {
-    private lateinit var videoUrl: String
-    private lateinit var videoTitle :String
-    private lateinit var map: LinkedHashMap<String,String>
+
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var videoRelaAdapter: VideoRelaAdapter
     private lateinit var videos : ArrayList<VideoBean>
-    private lateinit var URL:String
 
     override fun beforeView() {
         JZUtils.hideStatusBar(this)
@@ -64,13 +68,7 @@ class PlayWithRelaActivity : BaseActivity() {
     }
 
     override fun initListener() {
-        ivBack.setOnClickListener {
-            it.onSingleClick{
-                jzRela.clearFloatScreen()
-                finish()
-            }
-        }
-        videoRelaAdapter.setOnItemClickListener { adapter, view, position ->
+        videoRelaAdapter.setOnItemClickListener { _, view, position ->
             view?.determineTriggerSingleClick {
                 for (i in 0 until videos.size) {
                     videos[i].isPlay = false
@@ -81,28 +79,42 @@ class PlayWithRelaActivity : BaseActivity() {
             }
         }
         ivShowVideoList.setOnClickListener{
-            rlVideoList.visibility = View.VISIBLE
-            ivHideVideoList.visibility =View.VISIBLE
-            ivShowVideoList.visibility = View.GONE
+            showVideolist()
         }
         ivHideVideoList.setOnClickListener{
-            rlVideoList.visibility = View.GONE
-            ivHideVideoList.visibility =View.GONE
-            ivShowVideoList.visibility = View.VISIBLE
+            hideVideoList()
         }
+
+        relVideoPlayer.backButton.setOnClickListener{
+            onBackPressed()
+        }
+        relVideoPlayer.setVideoAllCallBack(object : GSYSampleCallBack(){
+
+            override fun onStartPrepared(url: String?, vararg objects: Any?) {
+                super.onStartPrepared(url, *objects)
+                Handler().postDelayed(object: Runnable{
+                    override fun run() {
+                        if(rlVideoList.visibility == View.VISIBLE){
+                            hideVideoList()
+                        }
+                    }
+                },3000)
+            }
+            override fun onClickBlank(url: String?, vararg objects: Any?) {
+                super.onClickBlank(url, *objects)
+                if(rlVideoList.visibility == View.GONE){
+                    showVideolist()
+                }
+                else{
+                    hideVideoList()
+                }
+            }
+        })
+
     }
 
     override fun initData() {
         playOnlienVideo(videos[0])
-        //控制开关按钮的显示
-       /* if(videos.size>0){
-            ivHideVideoList.visibility = View.VISIBLE
-            ivShowVideoList.visibility = View.GONE
-        }
-        else{
-            ivHideVideoList.visibility = View.GONE
-            ivShowVideoList.visibility = View.VISIBLE
-        }*/
     }
 
     override fun onRequestPermissionsResult(
@@ -123,30 +135,66 @@ class PlayWithRelaActivity : BaseActivity() {
 
     override fun onResume() {
         super.onResume()
-        Jzvd.goOnPlayOnResume()
+        relVideoPlayer.onVideoResume()
     }
 
     override fun onPause() {
         super.onPause()
-        //清空缓存
-        JZUtils.clearSavedProgress(applicationContext,null)
-        Jzvd.releaseAllVideos()
+        relVideoPlayer.onVideoPause()
     }
 
     override fun onDestroy() {
         super.onDestroy()
+        GSYVideoManager.releaseAllVideos()
     }
 
-    fun playOnlienVideo(videoBean: VideoBean){
-        map = LinkedHashMap()
-        map["高清"] = videoBean.videoUrl
-        map["标清"] =videoBean.videoUrl
-        map["普清"] =videoBean.videoUrl
-        val jzDataSource = JZDataSource(map,videoBean.title)
-        jzDataSource.looping = true
-        jzDataSource.currentUrlIndex = 2
-        jzDataSource.headerMap["key"] = "value" //header
-        jzRela.setUp(jzDataSource,JzvdStd.SCREEN_FULLSCREEN)
-        jzRela.startVideo()
+    private fun playOnlienVideo(videoBean: VideoBean){
+        relVideoPlayer.setUp(videoBean.videoUrl,true,videoBean.title)
+        if(videoBean.startPosition == 0L)
+        else
+            relVideoPlayer.seekOnStart = videoBean.startPosition
+        relVideoPlayer.startPlayLogic()
+
+    }
+
+    override fun onBackPressed() {
+        relVideoPlayer.setVideoAllCallBack(null)
+        super.onBackPressed()
+    }
+
+    /**
+     * 暂停视频的播放
+     */
+    fun pauseVideo(){
+        if(relVideoPlayer!= null){
+            relVideoPlayer.onVideoPause()
+        }
+    }
+
+    /**
+     * 播放视频
+     */
+    fun playVideo(){
+        if(relVideoPlayer!= null){
+            relVideoPlayer.onVideoResume()
+        }
+    }
+
+    /**
+     * 显示视频列表
+     */
+    private fun showVideolist(){
+        rlVideoList.visibility = View.VISIBLE
+        ivHideVideoList.visibility =View.GONE
+        ivShowVideoList.visibility = View.GONE
+    }
+
+    /**
+     * 隐藏视频列表
+     */
+    private fun hideVideoList(){
+        rlVideoList.visibility = View.GONE
+        ivHideVideoList.visibility =View.GONE
+        ivShowVideoList.visibility = View.VISIBLE
     }
 }

@@ -82,7 +82,7 @@ class ExpertGuideActivity : BaseActivity(){
                     this,
                     JzvdStd::class.java,
                     datas[position].courseUrl,
-                    datas[position].courseName
+                    datas[position].name
                 )
             }
         }

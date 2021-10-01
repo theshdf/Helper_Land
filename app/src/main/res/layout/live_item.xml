@@ -78,21 +78,23 @@
             />
     </RelativeLayout>
     <RelativeLayout
+        android:id="@+id/rlOver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@mipmap/live_start"
+        android:background="@mipmap/live_over"
         >
+
         <TextView
+            android:id="@+id/tvLive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="直播中"
-            android:textSize="11sp"
-            android:layout_marginRight="7dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginBottom="3dp"
-            android:layout_marginTop="3dp"
-            android:textColor="@color/white"
             android:layout_centerInParent="true"
-            />
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginBottom="3dp"
+            android:text="直播结束"
+            android:textColor="@color/white"
+            android:textSize="11sp" />
     </RelativeLayout>
 </RelativeLayout>

@@ -23,7 +23,9 @@ import com.jyzx.helper.R;
 import com.jyzx.helper.ui.activity.LoginActivity;
 import com.jyzx.helper.ui.activity.MainActivity;
 import com.jyzx.helper.event.WakeEvent;
-import com.jyzx.helper.ui.activity.SearchActivity;
+import com.jyzx.helper.ui.activity.PlayActivity;
+import com.jyzx.helper.ui.activity.PlayWithRelaActivity;
+import com.jyzx.helper.ui.activity.SearchFakeActivity;
 import com.jyzx.helper.utils.ActivityControlUtil;
 import com.jyzx.helper.utils.MediaPlay;
 import org.greenrobot.eventbus.EventBus;
@@ -66,7 +68,46 @@ public class WakeService extends Service {
                             playAudio();
                         }
                     }
-                    else if("回到首页".equals(msg.obj)){
+                  else if("暂停".equals(msg.obj)){
+                      Activity activity = ActivityControlUtil.getTopActivity();
+                      if(activity == null)
+                          return;
+                      if(activity instanceof PlayActivity){
+                           ((PlayActivity) activity).pauseVideo();
+                           return;
+                      }
+                      if(activity instanceof PlayWithRelaActivity){
+                          ((PlayWithRelaActivity) activity).pauseVideo();
+                          return;
+                      }
+                  }
+                  else if("播放".equals(msg.obj)){
+                      Activity activity = ActivityControlUtil.getTopActivity();
+                      if(activity == null)
+                          return;
+                      if(activity instanceof PlayActivity){
+                          ((PlayActivity) activity).playVideo();
+                          return;
+                      }
+                      if(activity instanceof PlayWithRelaActivity){
+                          ((PlayWithRelaActivity) activity).playVideo();
+                          return;
+                      }
+                  }
+                  else if("关闭视频".equals(msg.obj)){
+                      Activity activity = ActivityControlUtil.getTopActivity();
+                      if(activity == null)
+                          return;
+                      if(activity instanceof PlayActivity){
+                         activity.onBackPressed();
+                          return;
+                      }
+                      if(activity instanceof PlayWithRelaActivity){
+                          activity.onBackPressed();
+                          return;
+                      }
+                  }
+                   /* else if("回到首页".equals(msg.obj)){
                       Activity activity = ActivityControlUtil.getTopActivity();
                       if(activity == null)
                           return;
@@ -75,24 +116,24 @@ public class WakeService extends Service {
                       else {
                         ActivityControlUtil.removeActivityexcepeMain();
                       }
-                    }
-                    else if("人脸登录".equals(msg.obj)){
+                    }*/
+                   /* else if("人脸登录".equals(msg.obj)){
                       Activity activity = ActivityControlUtil.getTopActivity();
                       if(activity == null)
                           return;
                       //在当前页面打开人脸
                      // activity.startActivity(new Intent(activity, FaceDetectExpActivity.class));
                       activity.startActivity(new Intent(activity, LoginActivity.class));
-                  }
-                    else if("播放".equals(msg.obj)){
+                  }*/
+                   /* else if("播放".equals(msg.obj)){
                       Activity activity = ActivityControlUtil.getTopActivity();
                       if(activity == null)
                           return;
-                      if(activity instanceof SearchActivity){
+                      if(activity instanceof SearchFakeActivity){
                           // 播放视频  跳转到 视频播放页
-                          ((SearchActivity)((SearchActivity) activity)).startPlayVideo();
+                          ((SearchFakeActivity)((SearchFakeActivity) activity)).startPlayVideo();
                       }
-                  }
+                  }*/
                   }
             }
         };

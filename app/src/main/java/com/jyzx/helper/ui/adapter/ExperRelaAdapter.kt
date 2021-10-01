@@ -17,7 +17,7 @@ import com.jyzx.helper.bean.VideoBean
 class ExperRelaAdapter(resId: Int, data: ArrayList<Course>, context: Context?) : BaseQuickAdapter<Course,BaseViewHolder>(resId,data){
 
     override fun convert(holder: BaseViewHolder, item: Course) {
-        holder.setText(R.id.tvTitle,item.courseName)
+        holder.setText(R.id.tvTitle,item.name)
         holder.setText(R.id.tvDes,"点击量"+item.clickCount)
         var ivCover = holder.getView<ImageView>(R.id.ivCover)
         val option = RequestOptions().error(R.mipmap.ic_launcher)

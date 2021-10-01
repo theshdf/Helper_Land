@@ -8,6 +8,7 @@ import cc.taylorzhang.singleclick.determineTriggerSingleClick
 import cn.jzvd.JzvdStd
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.listener.OnItemClickListener
+import com.jyzx.helper.Constants
 import com.jyzx.helper.R
 import com.jyzx.helper.base.BaseFragment
 import com.jyzx.helper.base.BaseListFragment
@@ -43,18 +44,15 @@ class LiveFragment : BaseListFragment() {
 
     override fun initData() {
         gridLayoutManager = GridLayoutManager(activity,3)
-        liveData = FakeDataUtil.getCountryVideo()
+        liveData = FakeDataUtil.getEcoBuild()
         liveAdapter = LiveAdapter(R.layout.live_item,liveData,this)
         rvLive.adapter =liveAdapter
         rvLive.layoutManager = gridLayoutManager
-        liveAdapter.setOnItemClickListener { adapter, view, position ->
+        liveAdapter.setOnItemClickListener { _, view, position ->
             view.determineTriggerSingleClick{
-                JzvdStd.startFullscreenDirectly(
-                    activity,
-                    JzvdStd::class.java,
-                    liveData[position].videoUrl,
-                    liveData[position].title
-                )
+                var intent = Intent(activity,PlayActivity::class.java)
+                intent.putExtra(Constants.VIDEOBEAN,liveData[position])
+                startActivity(intent)
             }
         }
     }

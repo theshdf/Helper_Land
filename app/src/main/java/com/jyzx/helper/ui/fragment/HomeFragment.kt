@@ -129,6 +129,7 @@ class HomeFragment : BaseFragment() {
                         loadingHelper.showEmptyView()
                     }
                     //获取唤醒关键字
+                    HelperApplication.orderKeyword = it.orderKeyword
                     HelperApplication.keyWord = it.keyword
                 }.onFailure {
                     //显示错误界面

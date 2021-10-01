@@ -1,13 +1,14 @@
 <component name="libraryTable">
   <library name="Gradle: artifacts:faceplatform-release:unspecified">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/faceplatform-release/build/.transforms/2cd30b84f4e8cec13599392ef8d07911/jetified-faceplatform-release/jars/classes.jar!/" />
-      <root url="jar://$PROJECT_DIR$/faceplatform-release/build/.transforms/2cd30b84f4e8cec13599392ef8d07911/jetified-faceplatform-release/jars/libs/bd_unifylicense.jar!/" />
-      <root url="jar://$PROJECT_DIR$/faceplatform-release/build/.transforms/2cd30b84f4e8cec13599392ef8d07911/jetified-faceplatform-release/jars/libs/FaceSDK.jar!/" />
-      <root url="jar://$PROJECT_DIR$/faceplatform-release/build/.transforms/2cd30b84f4e8cec13599392ef8d07911/jetified-faceplatform-release/jars/libs/liantian.jar!/" />
-      <root url="jar://$PROJECT_DIR$/faceplatform-release/build/.transforms/2cd30b84f4e8cec13599392ef8d07911/jetified-faceplatform-release/jars/libs/libbaidusec.jar!/" />
       <root url="file://$PROJECT_DIR$/faceplatform-release/build/.transforms/2cd30b84f4e8cec13599392ef8d07911/jetified-faceplatform-release/res" />
-      <root url="file://$PROJECT_DIR$/faceplatform-release/build/.transforms/2cd30b84f4e8cec13599392ef8d07911/jetified-faceplatform-release/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/faceplatform-release/build/.transforms/173f4dccd5cfcabc8635ee16e97c1564/jetified-faceplatform-release/jars/libs/FaceSDK.jar!/" />
+      <root url="jar://$PROJECT_DIR$/faceplatform-release/build/.transforms/173f4dccd5cfcabc8635ee16e97c1564/jetified-faceplatform-release/jars/libs/bd_unifylicense.jar!/" />
+      <root url="jar://$PROJECT_DIR$/faceplatform-release/build/.transforms/173f4dccd5cfcabc8635ee16e97c1564/jetified-faceplatform-release/jars/libs/liantian.jar!/" />
+      <root url="file://$PROJECT_DIR$/faceplatform-release/build/.transforms/173f4dccd5cfcabc8635ee16e97c1564/jetified-faceplatform-release/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/faceplatform-release/build/.transforms/173f4dccd5cfcabc8635ee16e97c1564/jetified-faceplatform-release/jars/libs/libbaidusec.jar!/" />
+      <root url="file://$PROJECT_DIR$/faceplatform-release/build/.transforms/173f4dccd5cfcabc8635ee16e97c1564/jetified-faceplatform-release/res" />
+      <root url="jar://$PROJECT_DIR$/faceplatform-release/build/.transforms/173f4dccd5cfcabc8635ee16e97c1564/jetified-faceplatform-release/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

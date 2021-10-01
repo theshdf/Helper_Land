@@ -26,10 +26,10 @@ class NetBroadcastReceive : BroadcastReceiver(){
             var netWorkInfo = connectManager.activeNetworkInfo
             if(netWorkInfo!=null&& netWorkInfo.isAvailable){
                 //如果有网络
-                RxToast.showToast("网络恢复正常")
+                RxToast.showToast("网络正常连接")
             }
             else{
-                RxToast.showToast("网络已经断开")
+                RxToast.showToast("网络已经断开，请检查")
             }
         }
     }

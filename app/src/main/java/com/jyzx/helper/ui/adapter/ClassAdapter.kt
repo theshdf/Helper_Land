@@ -17,8 +17,8 @@ import com.jyzx.helper.bean.VideoBean
 class ClassAdapter(resId: Int,data: ArrayList<Course>,context: Context?) : BaseQuickAdapter<Course,BaseViewHolder>(resId,data){
 
     override fun convert(holder: BaseViewHolder, item: Course) {
-        holder.setText(R.id.tvTitle,item.courseName)
-        holder.setText(R.id.tvDes,item.creator)
+        holder.setText(R.id.tvTitle,item.name)
+        holder.setText(R.id.tvDes,item.createrid)
         var ivCover = holder.getView<ImageView>(R.id.ivCover)
         val option = RequestOptions().error(R.mipmap.ic_launcher)
             .placeholder(R.mipmap.ic_launcher)
