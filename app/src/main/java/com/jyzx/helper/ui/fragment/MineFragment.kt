@@ -3,6 +3,9 @@ package com.jyzx.helper.ui.fragment
 import android.content.Intent
 import android.text.TextUtils
 import android.view.View
+import cc.taylorzhang.singleclick.determineTriggerSingleClick
+import cc.taylorzhang.singleclick.onSingleClick
+import com.blankj.utilcode.util.ToastUtils
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.jyzx.helper.Constants
@@ -32,11 +35,13 @@ class MineFragment : BaseListFragment() {
 
     override fun initListener(view: View?) {
         rl_study.setOnClickListener{
-            if(!HelperApplication.isLogin){
-                RxToast.showToast("请先登录")
-                return@setOnClickListener
+            view?.determineTriggerSingleClick {
+                if (!HelperApplication.isLogin) {
+                    RxToast.showToast("请先登录")
+                    return@determineTriggerSingleClick
+                }
+                startActivity(Intent(activity, TestActivity::class.java))
             }
-            startActivity(Intent(activity,TestActivity::class.java))
         }
         tvUserName.setOnClickListener {
             if(tvUserName.text.equals("暂未登录")){
@@ -58,29 +63,35 @@ class MineFragment : BaseListFragment() {
         Glide.with(this).load(R.mipmap.head).apply(option).into(ivHeadIcon)
         rl_answer.setOnClickListener{
             //我的专家
-            if(!HelperApplication.isLogin){
-                RxToast.showToast("请先登录")
-                return@setOnClickListener
+            view?.determineTriggerSingleClick {
+                if (!HelperApplication.isLogin) {
+                    RxToast.showToast("请先登录")
+                    return@determineTriggerSingleClick
+                }
+                var intent = Intent(activity, ExpertListActivity::class.java)
+                startActivity(intent)
             }
-            var intent = Intent(activity,ExpertListActivity::class.java)
-            startActivity(intent)
         }
         rl_comment.setOnClickListener{
             //我的图书
-            if(!HelperApplication.isLogin){
-                RxToast.showToast("请先登录")
-                return@setOnClickListener
+            view?.determineTriggerSingleClick {
+                if (!HelperApplication.isLogin) {
+                    RxToast.showToast("请先登录")
+                    return@determineTriggerSingleClick
+                }
+                var intent = Intent(activity, BookActivity::class.java)
+                startActivity(intent)
             }
-            var intent = Intent(activity,BookActivity::class.java)
-            startActivity(intent)
         }
         rl_class.setOnClickListener{
-            if(!HelperApplication.isLogin){
-                RxToast.showToast("请先登录")
-                return@setOnClickListener
-            }
-            var intent = Intent(activity,LessonActivity::class.java)
-            startActivity(intent)
+           view?.determineTriggerSingleClick{
+               if(!HelperApplication.isLogin){
+                   RxToast.showToast("请先登录")
+                   return@determineTriggerSingleClick
+               }
+               var intent = Intent(activity,LessonActivity::class.java)
+               startActivity(intent)
+           }
         }
     }
 
@@ -99,6 +110,7 @@ class MineFragment : BaseListFragment() {
         var mmkv = MMKV.defaultMMKV()
         var userjson = mmkv.decodeString(Constants.USERINFO)
         if(HelperApplication.isLogin) {
+            llContent2.visibility =View.VISIBLE
             /*if (!TextUtils.isEmpty(userjson)) {
                 var userinfo = GsonUtil.getObjFromJson(userjson!!)
                 userinfo?.let {
@@ -112,6 +124,9 @@ class MineFragment : BaseListFragment() {
                     tvMineQuesCount.text = "20"
                     tvMineAnsCount.text = "18"
                     tvMineRepCount.text = "44"
+                    class2.visibility = View.VISIBLE
+                    book2.visibility = View.VISIBLE
+                    teacher2.visibility = View.VISIBLE
                     rl_study.setBackgroundResource(R.mipmap.zndx_1)
                     class1.setImageResource(R.mipmap.dagnhis1)
                     class2.setImageResource(R.mipmap.dagnhis3)
@@ -124,6 +139,9 @@ class MineFragment : BaseListFragment() {
                     tvMineQuesCount.text = "60"
                     tvMineAnsCount.text = "10"
                     tvMineRepCount.text = "7"
+                    class2.visibility = View.VISIBLE
+                    book2.visibility = View.VISIBLE
+                    teacher2.visibility = View.VISIBLE
                     rl_study.setBackgroundResource(R.mipmap.zndx_1)
                     class1.setImageResource(R.mipmap.jinggangshan1)
                     class2.setImageResource(R.mipmap.jinggangshan2)
@@ -142,14 +160,17 @@ class MineFragment : BaseListFragment() {
                 Glide.with(this).load(R.mipmap.head).apply(option).into(ivHeadIcon)
         }
         else{
+            llContent2.visibility =View.GONE
             tvUserName.text = "暂未登录"
             tvMineQuesCount.text = "0"
             tvMineAnsCount.text = "0"
             tvMineRepCount.text = "0"
             loginOut.visibility = View.GONE
             class1.visibility =View.VISIBLE
-            class2.visibility =View.VISIBLE
-            class3.visibility =View.VISIBLE
+            class2.visibility =View.GONE
+            class3.visibility =View.GONE
+            book2.visibility =View.GONE
+            teacher2.visibility =View.GONE
             class1.setImageResource(R.mipmap.ic_empty)
             class2.setImageResource(R.mipmap.ic_empty)
             class3.setImageResource(R.mipmap.ic_empty)
@@ -165,7 +186,7 @@ class MineFragment : BaseListFragment() {
 
     private fun isLogin(){
         if(!HelperApplication.isLogin){
-            RxToast.showToast("请先登录")
+            ToastUtils.showShort("请先登录")
             return
         }
     }
@@ -173,7 +194,7 @@ class MineFragment : BaseListFragment() {
     fun  openClass(){
         //我的课程
         if(!HelperApplication.isLogin){
-            RxToast.showToast("请先登录")
+            ToastUtils.showShort("请先登录")
             return
         }
         var intent = Intent(activity,LessonActivity::class.java)
@@ -182,7 +203,7 @@ class MineFragment : BaseListFragment() {
 
     fun openBook(){
         if(!HelperApplication.isLogin){
-            RxToast.showToast("请先登录")
+            ToastUtils.showShort("请先登录")
             return
         }
         var intent = Intent(activity,BookActivity::class.java)
@@ -191,7 +212,7 @@ class MineFragment : BaseListFragment() {
 
     fun openTeacher(){
         if(!HelperApplication.isLogin){
-            RxToast.showToast("请先登录")
+            ToastUtils.showShort("请先登录")
             return
         }
         var intent = Intent(activity,ExpertListActivity::class.java)

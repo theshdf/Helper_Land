@@ -182,7 +182,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="17dp"
             android:layout_marginRight="20dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="0dp"
@@ -222,8 +223,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginRight="24dp"
                         android:src="@mipmap/mine_comment"
-                        android:visibility="gone"
-                        />
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvClassExp"
@@ -309,8 +309,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginRight="24dp"
                         android:src="@mipmap/mien_answer"
-                        android:visibility="gone"
-                        />
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvBookExp"
@@ -388,8 +387,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginRight="24dp"
                         android:src="@mipmap/mine_order"
-                        android:visibility="gone"
-                        />
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvExpertExp"

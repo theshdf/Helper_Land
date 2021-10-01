@@ -49,5 +49,9 @@ open class Constants {
         const val USERINFO = "USERINFO"
         const val PASSWORD = "PASSWORD"
 
+        //搜索关键字
+
+        //操作关键字
+
     }
 }

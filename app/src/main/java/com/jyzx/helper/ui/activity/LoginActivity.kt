@@ -8,6 +8,7 @@ import android.text.method.LinkMovementMethod
 import android.view.TextureView
 import android.view.WindowManager
 import androidx.lifecycle.lifecycleScope
+import com.blankj.utilcode.util.ToastUtils
 import com.example.httpsender.kt.errorMsg
 import com.jyzx.helper.Constants
 import com.jyzx.helper.HelperApplication
@@ -77,15 +78,15 @@ class LoginActivity :  BaseActivity(){
             var username = login_userName_Et.text.toString()
             var pass = login_password_Et.text.toString()
             if(TextUtils.isEmpty(username)){
-                RxToast.showToast("请输入用户名")
+                ToastUtils.showShort("请输入用户名")
                 return@setOnClickListener
             }
             if(TextUtils.isEmpty(pass)){
-                RxToast.showToast("请输入用户密码")
+                ToastUtils.showShort("请输入用户密码")
                 return@setOnClickListener
             }
             if(!cbPrivacy.isChecked){
-               RxToast.showToast("请先阅读隐私政策")
+                ToastUtils.showShort("请先阅读隐私政策")
                 return@setOnClickListener
             }
             //走接口
@@ -135,13 +136,13 @@ class LoginActivity :  BaseActivity(){
                     else{
                         //提示用户
                             it.Message.let {
-                                RxToast.showToast(it)
+                                ToastUtils.showShort(it)
                             }
                     }
                     loadingHelper.showContentView()
                 }.onFailure {
                     loadingHelper.showContentView()
-                    RxToast.showToast(it.errorMsg)
+                    ToastUtils.showShort(it.errorMsg)
                 }
         }
     }
@@ -192,15 +193,15 @@ class LoginActivity :  BaseActivity(){
             var username = login_userName_Et.text.toString()
             var pass = login_password_Et.text.toString()
             if(TextUtils.isEmpty(username)){
-                RxToast.showToast("请输入用户名")
+                ToastUtils.showShort("请输入用户名")
                 return
             }
             if(TextUtils.isEmpty(pass)){
-                RxToast.showToast("请输入用户密码")
+                ToastUtils.showShort("请输入用户密码")
                 return
             }
             if(!cbPrivacy.isChecked){
-                RxToast.showToast("请先阅读隐私政策")
+                ToastUtils.showShort("请先阅读隐私政策")
                 return
             }
             //走接口
