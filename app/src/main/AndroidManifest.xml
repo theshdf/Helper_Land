@@ -73,26 +73,46 @@
         <service android:name=".services.VoiceService"/>
         <activity android:name=".ui.activity.MainActivity"
             android:launchMode="singleTop"
+            android:screenOrientation="landscape"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.PlayActivity"
+        <activity
+            android:name=".ui.activity.PlayActivity"
             android:launchMode="singleTop"
+            android:screenOrientation="landscape"
             />
         <activity android:name=".ui.activity.TestActivity"/>
-        <activity android:name=".ui.activity.SearchActivity"/>
-        <activity android:name=".ui.activity.PlayWithRelaActivity"/>
+        <activity
+            android:name=".ui.activity.SearchActivity"
+            android:screenOrientation="landscape"
+            />
+        <activity
+            android:name=".ui.activity.PlayWithRelaActivity"
+            android:screenOrientation="landscape"
+            />
         <activity android:name=".ui.activity.ExpertGuideActivity"/>
         <activity android:name=".ui.activity.ExpertListActivity"/>
-        <activity android:name=".ui.activity.LessonActivity"/>
-        <activity android:name=".ui.activity.BookActivity"/>
-        <activity android:name=".ui.activity.AnswerActivity"/>
+        <activity
+            android:name=".ui.activity.LessonActivity"
+            android:screenOrientation="landscape"
+            />
+        <activity
+            android:name=".ui.activity.BookActivity"
+            android:screenOrientation="landscape"
+            />
+        <activity
+            android:name=".ui.activity.AnswerActivity"
+            android:screenOrientation="landscape"
+            />
         <activity android:name=".ui.activity.SolveMethodActivtiy"/>
         <activity android:name=".ui.activity.SearchFakeActivity"/>
-        <activity android:name=".ui.activity.ExpertGuideFakeActivity"/>
+        <activity android:name=".ui.activity.ExpertGuideFakeActivity"
+            android:screenOrientation="landscape"
+            />
         <!--  人脸识别 -->
         <activity android:name="com.jyzx.helper.ui.activity.face.FaceEnterActivity"
             android:screenOrientation="landscape"
@@ -102,7 +122,7 @@
             />
         <activity android:name="com.jyzx.helper.ui.activity.face.CollectionSuccessActivity"/>
         <activity android:name="com.jyzx.helper.ui.activity.face.FaceDetectExpActivity"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             />
         <activity android:name=".ui.activity.LoginActivity" android:screenOrientation="landscape"/>
         <activity android:name=".base.BaseWebView"/>

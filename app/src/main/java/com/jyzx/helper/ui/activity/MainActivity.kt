@@ -354,10 +354,10 @@ class MainActivity : BaseActivity() {
                     if (!discussFragment.isAdded) {
                         beginTran.add(R.id.homeContent, mineFragment).commit()
                     } else {
-                        beginTran.show(mineFragment).commit()
+                        beginTran.show(mineFragment).       commit()
                     }
                 }
-                result.contains("回到首页")->{
+                result.contains("首页")->{
                     btnGroup.check(R.id.btnHome)
                     var beginTran = fragmentManager.beginTransaction()
                     beginTran.hide(liveFragment)

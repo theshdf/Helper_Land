@@ -19,8 +19,8 @@
         android:id="@+id/detect_close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="23dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/collect_image_close_selector" />
 
     <ImageView
@@ -59,8 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@mipmap/icon_collect_bottom"
-        android:visibility="gone"
-        />
+        android:visibility="gone"/>
 
     <TextView
         android:layout_width="wrap_content"

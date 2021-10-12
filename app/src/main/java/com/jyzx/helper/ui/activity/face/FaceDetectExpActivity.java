@@ -8,8 +8,9 @@ import com.baidu.idl.face.platform.FaceStatusNewEnum;
 import com.baidu.idl.face.platform.model.ImageInfo;
 import com.baidu.idl.face.platform.ui.FaceDetectActivity;
 import com.baidu.idl.face.platform.ui.utils.IntentUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.jyzx.helper.HelperApplication;
-import com.tamsiree.rxkit.view.RxToast;
+import com.jyzx.helper.ui.activity.face.TimeoutDialog;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -110,13 +111,12 @@ public class FaceDetectExpActivity extends FaceDetectActivity implements
         }
 
         // 页面跳转
-       /* IntentUtils.getInstance().setBitmap(bmpStr);
+      /*  IntentUtils.getInstance().setBitmap(bmpStr);
         Intent intent = new Intent(FaceDetectExpActivity.this,
                 CollectionSuccessActivity.class);
         intent.putExtra("destroyType", "FaceDetectExpActivity");
         startActivity(intent);*/
-        //是被成功关闭当前识别页面 回到之前的页面
-        RxToast.showToast("人脸登录成功");
+        ToastUtils.showLong("登录成功");
         finish();
     }
 

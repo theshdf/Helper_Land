@@ -13,10 +13,12 @@ public class Apiservice {
     public static String httpPath = "api/";
     //端口号
     public static String PORT = ":8089/";
-    //测试环境地址
-    public static String TEST_ADDRESS = "http://zsw.jy365.net"+PORT+httpPath;
 
+    //测试环境地址
     @DefaultDomain
+    public static String TEST_ADDRESS = "http://zsw.jy365.net/"+httpPath;
+
+
     public static String LOCAL_ADDRESS = "http://192.168.1.216"+PORT+httpPath;
 
 

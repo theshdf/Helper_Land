@@ -187,10 +187,10 @@ public class FaceDetectRoundView extends View {
         super.onDraw(canvas);
         canvas.drawColor(Color.TRANSPARENT);
         canvas.drawPaint(mBGPaint);
-        canvas.drawCircle(mX, mY, mR-180, mFaceRoundPaint);
+        canvas.drawCircle(mX, mY, mR, mFaceRoundPaint);
         // TODO：画检测区域（用于调试，这4个参数分别表示屏幕宽高和手机摄像头分辨率宽高，需要手动修改）
         // TODO：（使用时，将注释放开）
-        // canvas.drawRect(getPreviewDetectRect(1080, 1920, 432, 768), mCircleLinePaint);
+        //  canvas.drawRect(getPreviewDetectRect(1280, 800, 300, 200), mCircleLinePaint);
         // TODO：画人脸检测框（用于调试，使用时，将注释放开）
         // if (getFaceInfoRect(mFaceExtInfo) != null) {
         //     canvas.drawRect(getFaceInfoRect(mFaceExtInfo), mCircleLinePaint);

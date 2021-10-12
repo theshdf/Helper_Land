@@ -1024,6 +1024,78 @@ class FakeDataUtil  {
             return ecoCoun
         }
         /**
+         * 三治融合演示假数据
+         */
+        private fun getSanzhi(): ArrayList<VideoBean>{
+            var ecoCoun = ArrayList<VideoBean>()
+            var bean = VideoBean(
+                "2021-8-1",
+                100,
+                100,
+                "http://jykt.jy365.net/lessionnew/mp4/NGC2021092913.mp4",
+                "赵英",
+                "打造“三治融合”新格局",
+                "中国社会科学院工业经济研究所研究员、国家经济发展与经济风险研究中心主任",
+                R.mipmap.zhaoying_head,
+                R.mipmap.sanzhi1,
+                R.mipmap.zhaoying_head,
+                videoTime = "34",
+                videoType = Constants.HOME_TITLE[13],
+                startPosition = 13*1000
+            )
+
+            var bean2 = VideoBean(
+                "2021-8-1",
+                100,
+                100,
+                "http://jykt.jy365.net/lessionnew/mp4/HGC90I4021035_2103.mp4",
+                "王小广",
+                "党建引领 三治融合",
+                "中共中央党校（国家行政学院）经济学部副主任、教授",
+                R.mipmap.wxg_head,
+                R.mipmap.sanzhi2,
+                R.mipmap.wxg_head,
+                videoTime = "33",
+                videoType = Constants.HOME_TITLE[13],
+                startPosition = (6*60+40)*1000
+            )
+            var bean3 = VideoBean(
+                "2021-8-1",
+                100,
+                100,
+                "http://jykt.jy365.net/lessionnew/mp4/HGC72I3620115_2012.mp4",
+                "黄相怀",
+                "三治融合关键在融",
+                "中共中央党校（国家行政学院）国家高端智库学术委员会秘书长",
+                R.mipmap.huangnxianghuai_head,
+                R.mipmap.sanzhi3,
+                R.mipmap.huangnxianghuai_head,
+                videoTime = "30",
+                videoType = Constants.HOME_TITLE[13],
+                startPosition = (20*60+33)*1000
+            )
+            var bean4 = VideoBean(
+                "2021-8-1",
+                100,
+                100,
+                "http://jykt.jy365.net/lessionnew/mp4/HGC90I3621035_2104.mp4",
+                "王小广",
+                "走好“三治融合”的新路子",
+                "中央党校（国家行政学院）经济学部副主任、教授、博导",
+                R.mipmap.wxg_head,
+                R.mipmap.sanzhi4,
+                R.mipmap.wxg_head,
+                videoTime = "32",
+                videoType = Constants.HOME_TITLE[13],
+                startPosition = (5*60+39)*1000
+            )
+            ecoCoun.add(bean)
+            ecoCoun.add(bean2)
+            ecoCoun.add(bean3)
+            ecoCoun.add(bean4)
+            return ecoCoun
+        }
+        /**
          * 获取抗大相关的内容
          */
         fun getKangDa(): ArrayList<VideoBean>{
@@ -1436,6 +1508,10 @@ class FakeDataUtil  {
                     result.contains("十四五")->{
                         getShiSiWu()
                     }
+                    //
+                    result.contains("融合")->{
+                        getSanzhi()
+                    }
                     else->{
                         getCountryVideo()
                     }
@@ -1496,11 +1572,6 @@ class FakeDataUtil  {
             map["赵英"] = "     赵英，男，1952年9月17日出生，辽宁沈阳市人，1982年毕业于北京广播学院中国社会科学院工业经济研究所工业发展室主任、研究员、研究生院教授，研究生院博士生导师，国家经济发展与经济风险研究中心主任。主要研究领域为产业发展、企业战略管理与规划。在国家安全战略研究、产业经济研究、汽车工业等方面均有多项学术成果。近年来，对文化产业的发展进行了深入的理论与政策研究，对文化创意企业的经营战略进行了深入研究与咨询。负责制定、参与了许多国有大企业集团及民营企业的发展战略规划，并且经常为企业提供咨询意见。"
             map["黄相怀"] = "    黄相怀，中共中央党校（国家行政学院）习近平新时代中国特色社会主义思想研究中心办公室主任、研究员。中央党校国家高端智库学术委员会秘书长、中央党校科研部协作处处长、政治学博士、副研究员。长期专注于中国特色社会主义重大理论和实践问题的研究工作，主要围绕党建、政治理论等展开。在《人民日报》《光明日报》《求是》等报刊发表理论文章百余篇。2020年5月14日，入选“第三届全国基层政权建设和社区治理专家委员会成员”。"
             return  map
-
-        }
-
-        fun  getDis(){
-
         }
     }
 }

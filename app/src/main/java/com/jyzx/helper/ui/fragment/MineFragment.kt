@@ -5,6 +5,7 @@ import android.text.TextUtils
 import android.view.View
 import cc.taylorzhang.singleclick.determineTriggerSingleClick
 import cc.taylorzhang.singleclick.onSingleClick
+import com.baidu.idl.face.platform.ui.FaceDetectActivity
 import com.blankj.utilcode.util.ToastUtils
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -14,6 +15,9 @@ import com.jyzx.helper.R
 import com.jyzx.helper.base.BaseFragment
 import com.jyzx.helper.base.BaseListFragment
 import com.jyzx.helper.ui.activity.*
+import com.jyzx.helper.ui.activity.face.FaceDetectExpActivity
+import com.jyzx.helper.ui.activity.face.FaceEnterActivity
+import com.jyzx.helper.ui.activity.face.FaceLivenessExpActivity
 import com.jyzx.helper.utils.GsonUtil
 import com.tamsiree.rxkit.view.RxToast
 import com.tencent.mmkv.MMKV
@@ -45,7 +49,7 @@ class MineFragment : BaseListFragment() {
         }
         tvUserName.setOnClickListener {
             if(tvUserName.text.equals("暂未登录")){
-                startActivity(Intent(activity,LoginActivity::class.java))
+                startActivity(Intent(activity, FaceDetectExpActivity::class.java))
             }
         }
         loginOut.setOnClickListener {

@@ -411,10 +411,10 @@ public class FaceDetectActivity extends Activity implements
 
         if (mIDetectStrategy == null && mFaceDetectRoundView != null && mFaceDetectRoundView.getRound() > 0) {
             mIDetectStrategy = FaceSDKManager.getInstance().getDetectStrategyModule();
-            mIDetectStrategy.setPreviewDegree(360-mPreviewDegree);
+            mIDetectStrategy.setPreviewDegree(mPreviewDegree);
             mIDetectStrategy.setDetectStrategySoundEnable(mIsEnableSound);
-
-            Rect detectRect = FaceDetectRoundView.getPreviewDetectRect(mDisplayWidth, mPreviewWidth, mPreviewHight);
+            //mIDetectStrategy.setDetectStrategySoundEnable(false);
+            Rect detectRect = FaceDetectRoundView.getPreviewDetectRect(mDisplayWidth, mPreviewHight, mPreviewWidth);
             mIDetectStrategy.setDetectStrategyConfig(mPreviewRect, detectRect, this);
         }
         if (mIDetectStrategy != null) {
